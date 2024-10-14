@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta property="og:image" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Drag Papers 🫠</title>
   <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Short+Stack&amp;family=Homemade+Apple&amp;display=swap'>
@@ -338,10 +339,6 @@
     });
   });
 
-    // Disable right-click on the entire page
-    document.addEventListener('contextmenu', function(event) {
-      event.preventDefault();
-    });
 
     // Disable dragging images
     document.querySelectorAll('img').forEach(function(img) {
@@ -359,6 +356,42 @@
         event.preventDefault();
       }
     });
+</script>
+<script>
+// Prevent scrolling when interacting with draggable elements
+(function() {
+  let isInteracting = false;
+  const draggableElements = document.querySelectorAll('.paper');
+
+  function preventDefault(e) {
+    e.preventDefault();
+  }
+
+  function disableScroll() {
+    if (!isInteracting) {
+      window.addEventListener('touchmove', preventDefault, { passive: false });
+      isInteracting = true;
+    }
+  }
+
+  function enableScroll() {
+    window.removeEventListener('touchmove', preventDefault);
+    isInteracting = false;
+  }
+
+  draggableElements.forEach(element => {
+    element.addEventListener('mousedown', disableScroll);
+    element.addEventListener('touchstart', disableScroll, { passive: false });
+  });
+
+  document.addEventListener('mouseup', enableScroll);
+  document.addEventListener('touchend', enableScroll);
+
+  // Prevent default touch behavior on draggable elements
+  draggableElements.forEach(element => {
+    element.addEventListener('touchmove', preventDefault, { passive: false });
+  });
+})();
 </script>
 
 </body>
