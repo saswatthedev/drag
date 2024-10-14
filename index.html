@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Drag Papers 🫠</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Short+Stack&amp;family=Homemade+Apple&amp;display=swap'>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
+
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: 1000px;
+      background-image: url("https://www.psdgraphics.com/wp-content/uploads/2022/01/white-math-paper-texture.jpg");
+      background-position: center center;
+      margin: 0;
+      overflow: hidden;
+    }
+    
+    .paper {
+      background-image: url("https://i0.wp.com/textures.world/wp-content/uploads/2018/10/2-Millimeter-Paper-Background-copy.jpg?ssl=1");
+      background-size: 500px;
+      background-position: center center;
+      padding: 20px 100px;
+      transform: rotateZ(-5deg);
+      box-shadow: 1px 15px 20px 0px rgba(0,0,0,0.5);
+      position: absolute;
+      transition: transform 0.1s ease-out;
+      cursor: grab;
+    }
+    
+    .paper.heart {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      padding: 0;
+      border-radius: 50%;
+    }
+    
+    .paper.image {
+      padding: 10px;
+    }
+    
+    .paper.image p {
+      font-size: 30px;
+    }
+    
+    img {
+      max-height: 200px;
+      width: 100%;
+      user-select: none;
+      pointer-events: none;
+    }
+    
+    .paper.heart::after {
+      content: "";
+      background-image: url('https://cdn.pixabay.com/photo/2016/03/31/19/25/cartoon-1294994__340.png');
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-size: 150px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      opacity: 0.6;
+    }
+    
+    p {
+      font-family: 'Zeyada', cursive;
+      font-size: 50px;
+      color: rgb(0,0,100);
+      opacity: 0.75;
+      user-select: none;
+      pointer-events: none;
+    }
+    
+    .paper.red {
+      background-color: #ff9999;
+    }
+
+    /* Style for loading screen */
+    #loadingScreen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      z-index: 9999;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 20px;
+      letter-spacing: 1px;
+      text-align: center;
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    #loadingScreen p {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #dddddd;
+    }
+
+    /* Hide loading screen after loading */
+    .loaded #loadingScreen {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Improved spinner/loader */
+    .spinner {
+      border: 8px solid rgba(255, 255, 255, 0.2);
+      border-top: 8px solid #3498db;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      animation: spin 1s linear infinite;
+    }
+
+    /* Optional animation */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Adjusted gap between spinner and text */
+    .spinner + p {
+      margin-top: 25px;
+      font-size: 16px;
+      color: #f0f0f0;
+    }
+
+    @media screen and (max-width: 768px) {
+  .paper {
+    transform: scale(0.7) rotateZ(-5deg);
+    padding: 10px 50px;
+  }
+
+  .paper.heart {
+    width: 140px;
+    height: 140px;
+  }
+
+  .paper.heart::after {
+    background-size: 100px;
+  }
+
+  .paper.image {
+    padding: 5px;
+  }
+
+  .paper.image p {
+    font-size: 20px;
+  }
+
+  img {
+    max-height: 140px;
+  }
+
+  p {
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .paper {
+    transform: scale(0.5) rotateZ(-5deg);
+    padding: 5px 25px;
+  }
+
+  .paper.heart {
+    width: 100px;
+    height: 100px;
+  }
+
+  .paper.heart::after {
+    background-size: 70px;
+  }
+
+  .paper.image p {
+    font-size: 16px;
+  }
+
+  img {
+    max-height: 100px;
+  }
+
+  p {
+    font-size: 25px;
+  }
+}
+  </style>
+</head>
+<body>
+  <!-- Loading screen -->
+  <div id="loadingScreen">
+    <div class="spinner"></div>
+    <p>Loading...</p>
+  </div>
+
+  <div class="last">
+    <p>created by saswat!<br>hope you like this!<br>it took me 7 hours to code this!</p>
+  </div>
+  
+  <div class="paper image">
+    <p>your best photo</p>
+    <p>wow!!!!!!!!!! 💀</p>
+    <img src="https://i.postimg.cc/DfXvQPpn/IMG-6848.jpg" alt="gem image 1" />
+  </div>
+
+  <div class="paper image">
+    <p></p>
+    <img src="https://i.postimg.cc/FHDNFWzg/IMG-6850.jpg" alt="gem image 2" />
+  </div>
+
+  <div class="paper image">
+    <p>october is special</p>
+    <p>you know the reason 😇</p>
+    <img src="https://i.postimg.cc/6QQw8Dm5/IMG-6849.jpg" alt="gem image 3" />
+  </div>
+
+  <div class="paper red">
+    <p class="p1">my Favorite</p>
+    <p class="p2">person of TNS 👌</p>
+  </div>
+
+  <div class="paper">
+    <p class="p1">Happy Birthday</p>
+    <p class="p1">Anujaaaaa Sis<span style="color: red !important;">😊</span></p>
+  </div>
+
+  <div class="paper">
+    <p class="p1">Drag the papers to move!</p>
+  </div>
+<script>
+  let highestZ = 1;
+
+  class PaperDragger {
+    constructor(paper) {
+      this.paper = paper;
+      this.isDragging = false;
+      this.startX = 0;
+      this.startY = 0;
+      this.initialX = 0;
+      this.initialY = 0;
+      this.rotation = Math.random() * 30 - 15;
+
+      this.init();
+    }
+
+    init() {
+      this.paper.style.transform = `translateX(0px) translateY(0px) rotateZ(${this.rotation}deg)`;
+      this.paper.style.position = 'absolute'; // Ensure absolute positioning for dragging
+
+      // Mouse events
+      this.paper.addEventListener('mousedown', this.onMouseDown.bind(this));
+      document.addEventListener('mousemove', this.onMouseMove.bind(this));
+      document.addEventListener('mouseup', this.onEnd.bind(this));
+
+      // Touch events
+      this.paper.addEventListener('touchstart', this.onTouchStart.bind(this), { passive: false });
+      document.addEventListener('touchmove', this.onTouchMove.bind(this), { passive: false });
+      document.addEventListener('touchend', this.onEnd.bind(this));
+    }
+
+    onMouseDown(e) {
+      if (e.button !== 0) return;
+      this.startDrag(e.clientX, e.clientY);
+    }
+
+    onTouchStart(e) {
+      if (e.touches.length > 1) return;
+      const touch = e.touches[0];
+      this.startDrag(touch.clientX, touch.clientY);
+    }
+
+    onMouseMove(e) {
+      if (!this.isDragging) return;
+      this.drag(e.clientX, e.clientY);
+    }
+
+    onTouchMove(e) {
+      if (!this.isDragging) return;
+      e.preventDefault(); // Prevent default touch behavior
+      const touch = e.touches[0];
+      this.drag(touch.clientX, touch.clientY);
+    }
+
+    onEnd() {
+      this.isDragging = false;
+      this.paper.style.cursor = 'grab';
+    }
+
+    startDrag(clientX, clientY) {
+      this.isDragging = true;
+      this.paper.style.cursor = 'grabbing';
+      this.startX = clientX - this.initialX;
+      this.startY = clientY - this.initialY;
+      this.paper.style.zIndex = ++highestZ;
+    }
+
+    drag(clientX, clientY) {
+      const translateX = clientX - this.startX;
+      const translateY = clientY - this.startY;
+      this.paper.style.transform = `translateX(${translateX}px) translateY(${translateY}px) rotateZ(${this.rotation}deg)`;
+    }
+  }
+
+  // Initialize papers
+  document.addEventListener('DOMContentLoaded', () => {
+    const papers = Array.from(document.querySelectorAll('.paper'));
+    papers.forEach(paper => new PaperDragger(paper));
+
+    // Remove loading screen when the website loads
+    window.addEventListener("load", function () {
+      document.body.classList.add("loaded");
+    });
+  });
+
+    // Disable right-click on the entire page
+    document.addEventListener('contextmenu', function(event) {
+      event.preventDefault();
+    });
+
+    // Disable dragging images
+    document.querySelectorAll('img').forEach(function(img) {
+      img.addEventListener('dragstart', function(event) {
+        event.preventDefault();
+      });
+    });
+
+    // Disable key shortcuts
+    document.addEventListener('keydown', function(event) {
+      if (event.ctrlKey && (event.key === 'u' || event.key === 'U' || event.key === 'i' || event.key === 'I' || event.key === 's' || event.key === 'S')) {
+        event.preventDefault();
+      }
+      if (event.key === 'F12') {
+        event.preventDefault();
+      }
+    });
+</script>
+
+</body>
+</html>
