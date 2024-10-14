@@ -50,7 +50,10 @@
     
     img {
       max-height: 200px;
-      width: 100%;
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
       user-select: none;
       pointer-events: none;
     }
@@ -81,7 +84,7 @@
     .paper.red {
       background-color: #ff9999;
     }
-
+    
     /* Style for loading screen */
     #loadingScreen {
       position: fixed;
@@ -103,19 +106,19 @@
       opacity: 1;
       transition: opacity 0.5s ease-in-out;
     }
-
+    
     #loadingScreen p {
       margin-top: 20px;
       font-size: 18px;
       color: #dddddd;
     }
-
+    
     /* Hide loading screen after loading */
     .loaded #loadingScreen {
       opacity: 0;
       pointer-events: none;
     }
-
+    
     /* Improved spinner/loader */
     .spinner {
       border: 8px solid rgba(255, 255, 255, 0.2);
@@ -125,79 +128,79 @@
       height: 80px;
       animation: spin 1s linear infinite;
     }
-
+    
     /* Optional animation */
     @keyframes spin {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
-
+    
     /* Adjusted gap between spinner and text */
     .spinner + p {
       margin-top: 25px;
       font-size: 16px;
       color: #f0f0f0;
     }
-
+    
     @media screen and (max-width: 768px) {
-  .paper {
-    transform: scale(0.7) rotateZ(-5deg);
-    padding: 10px 50px;
-  }
-
-  .paper.heart {
-    width: 140px;
-    height: 140px;
-  }
-
-  .paper.heart::after {
-    background-size: 100px;
-  }
-
-  .paper.image {
-    padding: 5px;
-  }
-
-  .paper.image p {
-    font-size: 20px;
-  }
-
-  img {
-    max-height: 140px;
-  }
-
-  p {
-    font-size: 35px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .paper {
-    transform: scale(0.5) rotateZ(-5deg);
-    padding: 5px 25px;
-  }
-
-  .paper.heart {
-    width: 100px;
-    height: 100px;
-  }
-
-  .paper.heart::after {
-    background-size: 70px;
-  }
-
-  .paper.image p {
-    font-size: 16px;
-  }
-
-  img {
-    max-height: 100px;
-  }
-
-  p {
-    font-size: 25px;
-  }
-}
+      .paper {
+        transform: scale(0.7) rotateZ(-5deg);
+        padding: 10px 50px;
+      }
+    
+      .paper.heart {
+        width: 140px;
+        height: 140px;
+      }
+    
+      .paper.heart::after {
+        background-size: 100px;
+      }
+    
+      .paper.image {
+        padding: 5px;
+      }
+    
+      .paper.image p {
+        font-size: 20px;
+      }
+    
+      img {
+        max-height: 140px;
+      }
+    
+      p {
+        font-size: 35px;
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      .paper {
+        transform: scale(0.5) rotateZ(-5deg);
+        padding: 5px 25px;
+      }
+    
+      .paper.heart {
+        width: 100px;
+        height: 100px;
+      }
+    
+      .paper.heart::after {
+        background-size: 70px;
+      }
+    
+      .paper.image p {
+        font-size: 16px;
+      }
+    
+      img {
+        max-height: 100px;
+      }
+    
+      p {
+        font-size: 25px;
+      }
+    }
   </style>
 </head>
 <body>
