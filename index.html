@@ -42,6 +42,8 @@
     
     .paper.image {
       padding: 10px;
+      width: auto;
+      height: auto;
     }
     
     .paper.image p {
@@ -49,8 +51,6 @@
     }
     
     img {
-      max-height: 200px;
-      width: auto;
       max-width: 100%;
       height: auto;
       object-fit: contain;
@@ -145,7 +145,7 @@
     @media screen and (max-width: 768px) {
       .paper {
         transform: scale(0.7) rotateZ(-5deg);
-        padding: 10px 50px;
+        padding: 10px;
       }
     
       .paper.heart {
@@ -159,6 +159,8 @@
     
       .paper.image {
         padding: 5px;
+        width: 70vw;
+        height: auto;
       }
     
       .paper.image p {
@@ -166,7 +168,8 @@
       }
     
       img {
-        max-height: 140px;
+        max-width: 100%;
+        height: auto;
       }
     
       p {
@@ -177,7 +180,7 @@
     @media screen and (max-width: 480px) {
       .paper {
         transform: scale(0.5) rotateZ(-5deg);
-        padding: 5px 25px;
+        padding: 5px;
       }
     
       .paper.heart {
@@ -189,12 +192,18 @@
         background-size: 70px;
       }
     
+      .paper.image {
+        width: 80vw;
+        height: auto;
+      }
+    
       .paper.image p {
         font-size: 16px;
       }
     
       img {
-        max-height: 100px;
+        max-width: 100%;
+        height: auto;
       }
     
       p {
@@ -237,7 +246,7 @@
   </div>
 
   <div class="paper">
-    <p class="p1">Happy Birthday</p>
+    <p class="p1">Happy Bday</p>
     <p class="p1">Anujaaaaa Sis<span style="color: red !important;">😊</span></p>
   </div>
 
